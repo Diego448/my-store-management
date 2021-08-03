@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let element = document.createElement("p");
+        let getContent = async function() {
+            fetch("127.0.0.1:5000/").then(
+                response => response.json()
+            )
+        }
+        element.innerHTML = getContent();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
