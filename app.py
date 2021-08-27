@@ -18,6 +18,11 @@ def users():
 def user_list():
     return '{}'
 
+@app.route('/user/<user_id>')
+def user_get(user_id):
+    response = {'id': user_id}
+    return response
+
 @app.route('/user/create')
 def user_create():
     return '{}'
