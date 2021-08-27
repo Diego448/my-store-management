@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.css')}}">
+        <title>Document</title>
+    </head>
+    <body>
+        {% for user in users %}
+            <li>{{user.name}}</li>
+        {% endfor %}
+    </body>
+</html>

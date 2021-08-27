@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from db_utils import get_users
 
 app = Flask(__name__)
 
@@ -12,11 +13,12 @@ def homepage():
 
 @app.route('/users')
 def users():
-    return render_template('users.html')
+    users = get_users()
+    return render_template('users.html', users=users)
 
 @app.route('/user/list')
 def user_list():
-    return '{}'
+    return get_users()
 
 @app.route('/user/<user_id>')
 def user_get(user_id):
