@@ -27,12 +27,12 @@ def user_get(user_id):
 def user_create():
     return '{}'
 
-@app.route('/user/update')
-def user_update():
+@app.route('/user/update/<user_id>')
+def user_update(user_id):
     return '{}'
 
-@app.route('/user/delete')
-def user_delete():
+@app.route('/user/delete/<user_id>')
+def user_delete(user_id):
     return '{}'
 
 
