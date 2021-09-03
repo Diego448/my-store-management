@@ -1,5 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from db_utils import get_users, add_user
+import requests
 
 app = Flask(__name__)
 
@@ -13,12 +14,12 @@ def homepage():
 
 @app.route('/users', methods=['GET','POST'])
 def users():
-     
-    if requests.method == 'GET':
+    if request.method == 'GET':
         users = get_users()
         return render_template('users.html', users=users)
-    else:
-        response = requests.post("http://127.0.0.1:5000", data = {'name': 'Diego', 'password' : '1234'}, headers = {'content-type': 'application/json'})
+    elif request.method == 'POST':
+        response = requests.post("http://127.0.0.1:5000/user/create", data = '{"name": "Diego", "password": "1234"}', headers = {'content-type': 'application/json'})
+        return str(response.text)
 
 @app.route('/user/list')
 def user_list():
@@ -32,7 +33,7 @@ def user_get(user_id):
 @app.route('/user/create', methods=['POST'])
 def user_create():
     response = add_user(request.get_json())
-    return response
+    return {'status': str(response)}
 
 @app.route('/user/update/<user_id>')
 def user_update(user_id):
