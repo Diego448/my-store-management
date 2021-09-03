@@ -33,7 +33,7 @@ def user_get(user_id):
 @app.route('/user/create', methods=['POST'])
 def user_create():
     response = add_user(request.get_json())
-    return {'status': str(response)}
+    return {'success': str(response)}
 
 @app.route('/user/update/<user_id>')
 def user_update(user_id):
