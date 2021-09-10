@@ -3,11 +3,41 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.css')}}">
-        <title>Document</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <title>Usuarios</title>
     </head>
     <body>
-        {% for user in users %}
-            <li>{{user.name}}</li>
-        {% endfor %}
+        <div class="container">
+            <h2>Usuarios</h2>
+            
+            <div class="input-group mb-3">
+                <button class="input-group-text bg-success"><i class="bi bi-plus-square text-white"></i></button>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-text">.00</span>
+            </div>
+            <table class="table table-stripe table-hoverd">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr style="cursor:pointer">
+                        <td>
+                            {{user.name}}
+                        </td>
+                        <td>
+                            {{user.email}}
+                        </td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
     </body>
 </html>
