@@ -1,118 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.css')}}">
-        <link href="{{url_for('static', filename='fontawesome/css/all.css')}}" rel="stylesheet">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='images/favicon.png')}}">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-        <title>Usuarios</title>
-    </head>
-    <body class="bg-light">
-      <nav class="navbar navbar-expand-lg navbar-light bg-white text-muted shadow bg-body rounded">
-        <div class="container-fluid">
-          <a href="/" class="d-flex align-items-center px-3 pb-2 mb-md-0 me-md-auto mt-2 text-white text-decoration-none">
-            <img src="{{url_for('static', filename='images/Logo1.png')}}" alt="" width="40" height="34" >
-            <span class="fs-5 d-none d-sm-inline px-2 text-muted">Abarrotes Gus</span>
-          </a>
-            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                <span class="d-none d-sm-inline mx-1">loser</span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-light text-small shadow">
-                <li><a class="dropdown-item" href="#">New project...</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Sign out</a></li>
-            </ul>
-            <!-- <ul class="navbar-nav navbar-right">
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user"></i> Usuario</a></li>
-              </ul> -->
-        </div>
-      </nav>
-          <div class="container-fluid">
-            <div class="row flex-nowrap">
-                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark shadow p-3 rounded">
-                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3  text-white min-vh-100">
-                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start " id="menu">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link align-middle px-0 text-white">
-                                    <i class="fa fa-home text-white"></i> <span class="ms-1 d-none d-sm-inline">Principal</span>
-                                </a>
-                            </li>
-                            <li>
-                              <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
-                                  <i class="fa fa-cash-register text-white"></i> <span class="ms-1 d-none d-sm-inline">Ventas</span></a>
-                              <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                                  <li class="w-100">
-                                      <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">Item</span> 1</a>
-                                  </li>
-                                  <li>
-                                      <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">Item</span> 2</a>
-                                  </li>
-                              </ul>
+{% extends "navbar.html" %}
+{% block title %}Usuarios{% endblock %}
+{% block content %}
+            <div class="w-100">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-0">
+                    <div class="container-fluid">
+                      <div class="collapse navbar-collapse d-flex " id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto p-0 bd-highlight mb-2 mb-lg-0">
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                                Usuario
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="#">Editar usuario</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Cerrar sesion</a></li>
+                            </ul>
                           </li>
-                           
-                                <a href="#" class="nav-link px-0 align-middle text-white">
-                                    <i class="fa fa-shopping-cart text-white"></i> <span class="ms-1 d-none d-sm-inline">Compras</span></a>
-                            </li>
-                            <li>
-                                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
-                                    <i class="fa fa-tags text-white"></i> <span class="ms-1 d-none d-sm-inline">Productos</span></a>
-                                <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                                    <li class="w-100">
-                                        <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">Item</span> 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">Item</span> 2</a>
-                                    </li>
-                                </ul>
-                            </li>
-                           
                         </ul>
-                        <hr>
+                      </div>
                     </div>
-                </div>
-                <div class="col py-3">
-                  <h4 class="px-2 text-muted" style="text-align: center; ">Usuarios</h4 >   
-                  <div class="input-group mb-3">
-                      <button class="input-group-text bg-success"><i class="fa fa-plus text-white"></i></button>
-                      <input type="text" class="form-control" placeholder="Buscar usuario">
+                  </nav>
+                  <div id="content">
+                    <section>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2 class="font-weight-bold mb-3 mt-2 " ">Usuarios</h2 >   
+                                        <div class="input-group mb-2">
+                                          <button type="button" class="input-group-text bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                              <i class="fa fa-plus text-white"></i>
+                                            </button>
+                                            
+                                            <input type="text" class="form-control" placeholder="Buscar usuario">
+                                        </div>
+                                        <table class="table table-stripe table-hoverd">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>Correo</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for user in users %}
+                                                <tr style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                    <td>
+                                                        {{user.name}}
+                                                    </td>
+                                                    <td>
+                                                        {{user.email}}
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                   </div>
-                  <table class="table table-stripe table-hoverd">
-                      <thead>
-                          <tr>
-                              <th>Nombre</th>
-                              <th>Correo</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          {% for user in users %}
-                          <tr style="cursor:pointer">
-                              <td>
-                                  {{user.name}}
-                              </td>
-                              <td>
-                                  {{user.email}}
-                              </td>
-                          </tr>
-                          {% endfor %}
-                      </tbody>
-                  </table>
-                  
-                </div>
             </div>
-        </div>
-    </body>
-    <footer class="text-center text-lg-start bg-white text-muted shadow rounded   ">
+        
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">(Agregar o editar) usuario </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="" method="post">
+                    <div class="input-group input-group-sm mb-2">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <div class="input-group input-group-sm mb-2">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <div class="input-group input-group-sm mb-2">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Usuario</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <div class="input-group input-group-sm mb-2">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Contraseña</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> -->
+                  <button type="button" class="btn btn-success">Guardar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+{% endblock %}  
+    <!-- <footer class="text-center text-lg-start bg-white text-muted shadow  ">
       <div class="text-center p-2 " >
         © 2021 Copyright
       </div>
-    </footer>
+    </footer> -->
+
     
-</html>
+    

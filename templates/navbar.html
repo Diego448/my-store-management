@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script src="{{url_for('static', filename='bootstrap.bundle.min.js')}}"></script>
+        <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.css')}}">
+        <link href="{{url_for('static', filename='fontawesome/css/all.css')}}" rel="stylesheet">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='images/favicon.png')}}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <!-- <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff"> -->
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body >
+        <div class="d-flex">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark shadow p-3">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3  text-white min-vh-100">
+                    <div class="logo mt-2 mb-4 ">
+                        <img src="{{url_for('static', filename='images/Logo1.png')}}" alt="" width="40" height="34" style="cursor:pointer" >
+                        <span class="fs-6 d-none d-sm-inline px-2 text-light" style="cursor:pointer">Abarrotes Gus</span>
+                    </div>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start " id="menu">
+                        <!-- <li class="nav-item">
+                            <a href="#" class="nav-link align-middle px-0 p-3 text-white">
+                                <i class="fa fa-home text-white"></i> <span class="ms-1 d-none d-sm-inline">Principal</span>
+                            </a>
+                        </li> -->
+                        <li>
+                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 p-3 align-middle text-white">
+                                <i class="fa fa-cash-register text-white"></i> <span class="ms-1 d-none d-sm-inline">Ventas</span></a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 p-3 align-middle text-white">
+                                <i class="fa fa-shopping-cart text-white"></i> <span class="ms-1 d-none d-sm-inline">Compras</span></a>
+                        </li>
+                        <li>
+                            <a href="#dashboard" data-bs-toggle="collapse" class="nav-link px-0 p-3  align-middle text-white">
+                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                            <ul class="collapse  flex-column ms-1" id="dashboard" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 p-3 align-middle text-white">
+                                <i class="fa fa-tags text-white"></i> <span class="ms-1 d-none d-sm-inline">Inventario</span></a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 p-3 align-middle text-white">
+                                <i class="fa fa-chart-bar text-white"></i> <span class="ms-1 d-none d-sm-inline">Estadisticas</span></a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 p-3 align-middle text-white">
+                                <i class="fa fa-users text-white"></i> <span class="ms-1 d-none d-sm-inline">Usuarios</span></a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+
+</html>
