@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from db_utils import get_users, add_user, get_user
-import requests
+import requests, json
 
 app = Flask(__name__)
 
@@ -18,10 +18,9 @@ def users():
         users = get_users()
         return render_template('users.html', users=users)
     elif request.method == 'POST':
-        new_user = request.form
+        new_user = request.form.to_dict(flat=True)
         result = add_user(new_user)
-        return result
-
+        return str(result)
 
 @app.route('/user/list')
 def user_list():
