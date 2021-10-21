@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <script src="{{url_for('static', filename='bootstrap.bundle.min.js')}}"></script>
+        <script src="{{url_for('static', filename='users.js')}}"></script>
         <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.css')}}">
         <link href="{{url_for('static', filename='fontawesome/css/all.css')}}" rel="stylesheet">
         <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='images/favicon.png')}}">
@@ -10,9 +11,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
-        <!-- <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff"> -->
         <title>{% block title %}{% endblock %}</title>
     </head>
     <body >
