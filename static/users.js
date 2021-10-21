@@ -1,12 +1,15 @@
-function editUser(id) {
-    const response = fetch("/user/" + id).then(
+async function getUserDetails(id) {
+    return fetch("/user/" + id).then(
         response => response.json()
     ).then(
-        response => console.log(response)
+        responseJSON => {return responseJSON}
     )
 }
 
-function fillUserEditModal(data) {
+async function fillUserEditModal(id) {
     let nameInput = document.getElementById("name");
-    nameInput.value = data.name;
+    let modalTitle = document.getElementById("exampleModalLabel");
+    let data = await getUserDetails(id);
+    modalTitle.innerHTML = "Editar usuario";
+    nameInput.value = data["name"];
 }
