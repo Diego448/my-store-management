@@ -43,16 +43,14 @@
                                             </thead>
                                             <tbody>
                                                 {% for user in users %}
-                                                <tr style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <tr style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{ user._id }}">
                                                     <td>
                                                         {{user.name}}
                                                     </td>
                                                     <td>
                                                         {{user.email}}
                                                     </td>
-                                                    <td>
-                                                        <input type="button" data-id="{{ user._id }}" value="Editar">
-                                                    </td>
+                                                    
                                                 </tr>
                                                 {% endfor %}
                                             </tbody>
