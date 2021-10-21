@@ -26,7 +26,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h2 class="font-weight-bold mb-3 mt-2 " ">Usuarios</h2 >   
+                                    <h2 class="font-weight-bold mb-3 mt-2">Usuarios</h2 >   
                                         <div class="input-group mb-2">
                                           <button type="button" class="input-group-text bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                               <i class="fa fa-plus text-white"></i>
@@ -43,14 +43,16 @@
                                             </thead>
                                             <tbody>
                                                 {% for user in users %}
-                                                <tr style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{ user._id }}">
+                                                <tr style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{ user._id }}" name="user_data">
                                                     <td>
                                                         {{user.name}}
                                                     </td>
                                                     <td>
                                                         {{user.email}}
                                                     </td>
-                                                    
+                                                    <td>
+                                                      <input type="button" value="Edit" onclick="fillUserEditModal('{{user._id}}')">
+                                                    </td>
                                                 </tr>
                                                 {% endfor %}
                                             </tbody>
