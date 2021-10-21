@@ -17,6 +17,11 @@ def users():
     if request.method == 'GET':
         users = get_users()
         return render_template('users.html', users=users)
+    elif request.method == 'POST':
+        new_user = request.form
+        result = add_user(new_user)
+        return result
+
 
 @app.route('/user/list')
 def user_list():
