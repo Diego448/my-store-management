@@ -1,29 +1,10 @@
 {% extends "navbar.html" %}
 {% block title %}Usuarios{% endblock %}
 {% block content %}
-            <div class="w-100">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-0">
-                    <div class="container-fluid">
-                      <div class="collapse navbar-collapse d-flex " id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto p-0 bd-highlight mb-2 mb-lg-0">
-                          <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                                Usuario
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                              <li><a class="dropdown-item" href="#">Editar usuario</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Cerrar sesion</a></li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </nav>
+            
                   <div id="content">
                     <section>
-                        <div class="container">
+                        <div class="container-fluid">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <h2 class="font-weight-bold mb-3 mt-2">Usuarios</h2 >   
@@ -37,15 +18,28 @@
                                         <table class="table table-stripe table-hoverd">
                                             <thead>
                                                 <tr>
-                                                    <th>Nombre</th>
-                                                    <th>Correo</th>
+                                                    <th class="col-md-1">Status</th>
+                                                    <th class="col-md-3">Nombre</th>
+                                                    <th class="col-md-3">Usuario</th>
+                                                    <th class="col-md-3">Correo</th>
+                                                    <th class="col-md-2">Acciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 {% for user in users %}
                                                 <tr style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{ user._id }}" name="user_data">
                                                     <td>
+                                                      {% if user.status == 1 %}
+                                                        <span class="badge bg-success">Activo</span>
+                                                      {% else %}
+                                                        <span class="badge bg-danger">Inactivo</span>
+                                                      {% endif %}
+                                                    </td>
+                                                    <td>
                                                         {{user.name}}
+                                                    </td>
+                                                    <td>
+                                                        {{user.username}}
                                                     </td>
                                                     <td>
                                                         {{user.email}}
@@ -62,11 +56,10 @@
                         </div>
                     </section>
                   </div>
-            </div>
         
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-sm">
               <div class="modal-content">
                 <form id="modalForm">
                   <div class="modal-header p-2">
@@ -90,8 +83,8 @@
                         <span class="input-group-text" >Contraseña</span>
                         <input type="text" class="form-control" id="password" name="password">
                     </div>
-                    <div>
-                      <select class="input-group input-group-sm mb-2" id="privileges" name="privileges">
+                    <div class="input-group input-group-sm mb-2">
+                      <select class="form-select" id="privileges" name="privileges">
                         <option value="admin">Administrador</option>
                         <option value="user">Usuario</option>
                       </select>
