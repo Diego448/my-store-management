@@ -34,19 +34,19 @@
                             <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                             </ul>
                         </li>
-                        <li>
+                       <!--  <li>
                             <a href="#" class="nav-link px-0 p-3 align-middle text-white">
                                 <i class="fa fa-shopping-cart text-white"></i> <span class="ms-1 d-none d-sm-inline">Compras</span></a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="#dashboard" data-bs-toggle="collapse" class="nav-link px-0 p-3  align-middle text-white">
-                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                                <i class="fa fa-shopping-cart text-white"></i> <span class="ms-1 d-none d-sm-inline">Compras</span> <i class="fas fa-caret-down"></i></a>
                             <ul class="collapse  flex-column ms-1" id="dashboard" data-bs-parent="#menu">
                                 <li class="w-100">
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
+                                    <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">Compras</span> </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
+                                    <a href="#" class="nav-link px-0 text-white"> <span class="d-none d-sm-inline">Proveedores</span> </a>
                                 </li>
                             </ul>
                         </li>
@@ -71,7 +71,28 @@
                     </ul>
                 </div>
             </div>
+            <div class="w-100">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-0">
+                    <div class="container-fluid">
+                      <div class="collapse navbar-collapse d-flex " id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto p-0 bd-highlight mb-2 mb-lg-0">
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                                Usuario
+                            </a>
+                            <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="#">Editar usuario</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Cerrar sesion</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
             {% block content %}{% endblock %}
+            </div>
         </div>
     </body>
 
