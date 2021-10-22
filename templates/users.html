@@ -51,7 +51,7 @@
                                                         {{user.email}}
                                                     </td>
                                                     <td>
-                                                      <input type="button" value="Edit" onclick="fillUserEditModal('{{user._id}}')">
+                                                        <i class="fas fa-edit" onclick="fillUserEditModal('{{user._id}}')"></i>
                                                     </td>
                                                 </tr>
                                                 {% endfor %}
@@ -98,8 +98,8 @@
                     </div>
                   </div>
                   <div class="modal-footer p-1">
-                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> -->
-                    <input type="button" class="btn btn-success btn-sm" value="Agregar" onclick="addUser()">
+                    <button type="button" class="btn btn-success btn-sm" value="Agregar" onclick="addUser()">
+                    <button type="button" class="btn btn-success btn-sm" value="Editar" onclick="" hidden>
                   </div>
                 </form>
               </div>
