@@ -68,10 +68,10 @@
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
-                <form method="post">
+                <form id="modalForm">
                   <div class="modal-header p-2">
                     <h5 class="modal-title" id="exampleModalLabel">(Agregar o editar) usuario </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="modalClose"></button>
                   </div>
                   <div class="modal-body p-2">
                     <div class="input-group input-group-sm mb-2">
@@ -99,7 +99,7 @@
                   </div>
                   <div class="modal-footer p-1">
                     <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> -->
-                    <input type="submit" class="btn btn-success btn-sm" value="Agregar">
+                    <input type="button" class="btn btn-success btn-sm" value="Agregar" onclick="addUser()">
                   </div>
                 </form>
               </div>
