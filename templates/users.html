@@ -9,7 +9,7 @@
                                 <div class="col-lg-12">
                                     <h2 class="font-weight-bold mb-3 mt-2">Usuarios</h2 >   
                                         <div class="input-group mb-2">
-                                          <button type="button" class="input-group-text bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                          <button type="button" class="input-group-text bg-success" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="toggleAdd()">
                                               <i class="fa fa-plus text-white"></i>
                                             </button>
                                             
@@ -91,8 +91,8 @@
                     </div>
                   </div>
                   <div class="modal-footer p-1">
-                    <button type="button" class="btn btn-success btn-sm" value="Agregar" onclick="addUser()">
-                    <button type="button" class="btn btn-success btn-sm" value="Editar" onclick="" hidden>
+                    <input type="button" class="btn btn-success btn-sm" value="Agregar" id="modalSave" onclick="addUser()">
+                    <input type="button" class="btn btn-success btn-sm" value="Editar" id="modalEdit" onclick="updateUser()" hidden>
                   </div>
                 </form>
               </div>
