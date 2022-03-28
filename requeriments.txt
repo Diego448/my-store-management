@@ -1,3 +1,4 @@
-flask
+fastapi
 pymongo
 requests
+uvicorn
