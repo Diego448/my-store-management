@@ -5,5 +5,4 @@ lib64
 pyvenv.cfg
 share/
 __pycache__/
-static/bootstrap-icons-1.5.0/
 src/__pycache__
